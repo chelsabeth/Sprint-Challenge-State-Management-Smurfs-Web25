@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { postSmurf } from "../actions";
 
-const SmurfForm = () => {
+const SmurfForm = props => {
   const [smurfName, setSmurfName] = useState();
   const [smurfAge, setSmurfAge] = useState();
-  const [smurHeight, setSmurfHeight] = useState();
+  const [smurfHeight, setSmurfHeight] = useState();
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log("Smurfs Info:", smurfName, smurfAge, smurHeight);
-    postSmurf(smurfName, smurfAge, smurHeight);
+    console.log("Smurfs Info:", smurfName, smurfAge, smurfHeight);
+    postSmurf(smurfName, smurfAge, smurfHeight);
   };
 
   return (
@@ -19,25 +19,25 @@ const SmurfForm = () => {
         <input
           type="text"
           placeholder="Name Your Smurf"
-          onChange={event => setSmurfName(event.target.value)}
-          value={smurfName}
+          onChange={e => setSmurfName(e.target.value)}
+          value={undefined}
         />
 
         <input
           type="text"
           placeholder="Smurf Age"
-          onChange={event => setSmurfAge(event.target.value)}
-          value={smurfAge}
+          onChange={e => setSmurfAge(e.target.value)}
+          value={undefined}
         />
 
         <input
           type="text"
           placeholder="Smurf Height"
-          onChange={event => setSmurfHeight(event.target.value)}
-          value={smurfHeight}
+          onChange={e => setSmurfHeight(e.target.value)}
+          value={undefined}
         />
 
-        <button type="submit">Add Your Smurf!</button>
+        <button type="submit" onClick={() => props.postSmurf()}>Add Your Smurf!</button>
       </form>
     </div>
   );
