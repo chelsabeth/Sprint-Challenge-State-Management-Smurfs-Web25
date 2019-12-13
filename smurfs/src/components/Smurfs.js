@@ -8,7 +8,7 @@ const Smurfs = props => {
       <button onClick={() => props.getSmurfs()}>Fetch Smurfs!</button>
       {props.smurfs &&
         props.smurfs.map(smurf => (
-          <div>
+          <div key={smurf.id}>
             <h1>Name: {smurf.name}</h1>
             <p>Age: {smurf.age}</p>
             <p>Height: {smurf.height}</p>
