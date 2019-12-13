@@ -29,7 +29,7 @@ export const postSmurf = (newSmurf) => dispatch => {
         .post("http://localhost:3333/smurfs", newSmurf)
         .then(res => {
             console.log("Post axios call:", res.data)
-            dispatch({ type: POST_SMURF, payload: res.data })
+            dispatch({ type: FETCH_SMURFS_SUCCESS, payload: res.data })
         })
         .catch(err => {
             console.log("this is the error", err)

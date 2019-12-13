@@ -2,6 +2,7 @@ import {
   FETCH_SMURFS_START,
   FETCH_SMURFS_SUCCESS,
   FETCH_SMURFS_FAIL,
+  // ADD_NEW_SMURF
   POST_SMURF,
   POST_SMURF_FAIL
 } from "../actions";
@@ -34,27 +35,29 @@ const reducer = (state = initialState, action) => {
         fetchingSmurfs: false,
         error: action.payload
       };
-      case ADD_NEW_SMURF: 
-      const newSmurf = {
-        name: action.payload,
-        age: 0,
-        height: "",
-        id: Date.now()
-      }
-    // case POST_SMURF:
-    //   return {
-    //     ...state,
-    //     addingSmurf: true,
-    //     fetchingSmurfs: true,
-    //     smurfs: [...state.smurfs, action.payload]
-    //   };
-    // case POST_SMURF_FAIL:
-    //   return {
-    //     ...state,
-    //     addingSmurf: false,
-    //     error: action.payload,
-    //     fetchingSmurfs: false
-    //   };
+      // case ADD_NEW_SMURF: 
+      // const newSmurf = {
+      //   name: action.payload,
+      //   age: 0,
+      //   height: "",
+      //   id: Date.now()
+      // };
+      // return { ...state, smurfs: [...state.smurfs, newSmurf] };
+    case POST_SMURF:
+        const newSmurf = {
+          name: action.payload,
+          age: 0,
+          height: "",
+          id: Date.now()
+        };
+        return { ...state, smurfs: [...state.smurfs, newSmurf] };
+    case POST_SMURF_FAIL:
+      return {
+        ...state,
+        addingSmurf: false,
+        error: action.payload,
+        fetchingSmurfs: false
+      };
     default:
       return state;
   }

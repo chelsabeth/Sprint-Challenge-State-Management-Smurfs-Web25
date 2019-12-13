@@ -23,8 +23,8 @@ const SmurfForm = props => {
       height: newSmurf.height,
       id: newSmurf.id
     }
-      postSmurf(newSmurf)
-      console.log("Smurfs Info:", smurf);
+      // postSmurf(newSmurf)
+      console.log("Smurfs Info:", newSmurf);
   }
 
   return (
@@ -57,7 +57,7 @@ const SmurfForm = props => {
           value={newSmurf.height}
         />
 
-        <button type="submit" onClick={() => props.postSmurf()}>
+        <button type="submit" onClick={() => props.postSmurf(newSmurf)}>
           Add Your Smurf!
         </button>
       </form>
