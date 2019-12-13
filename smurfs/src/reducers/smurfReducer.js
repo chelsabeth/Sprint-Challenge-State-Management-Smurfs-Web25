@@ -2,7 +2,6 @@ import {
   FETCH_SMURFS_START,
   FETCH_SMURFS_SUCCESS,
   FETCH_SMURFS_FAIL,
-  // ADD_NEW_SMURF
   POST_SMURF,
   POST_SMURF_FAIL
 } from "../actions";
@@ -15,7 +14,6 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-  // console.log(action.type);
   switch (action.type) {
     case FETCH_SMURFS_START:
       return {
@@ -35,14 +33,6 @@ const reducer = (state = initialState, action) => {
         fetchingSmurfs: false,
         error: action.payload
       };
-      // case ADD_NEW_SMURF: 
-      // const newSmurf = {
-      //   name: action.payload,
-      //   age: 0,
-      //   height: "",
-      //   id: Date.now()
-      // };
-      // return { ...state, smurfs: [...state.smurfs, newSmurf] };
     case POST_SMURF:
         const newSmurf = {
           name: action.payload,

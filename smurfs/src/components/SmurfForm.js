@@ -16,15 +16,6 @@ const SmurfForm = props => {
 
   const submitForm = e => {
       e.preventDefault();
-    //   console.log("**SMURF**", newSmurf);
-    // const smurf = {
-    //   name: newSmurf.name,
-    //   age: newSmurf.age,
-    //   height: newSmurf.height,
-    //   id: newSmurf.id
-    // }
-      // postSmurf(newSmurf)
-      console.log("Smurfs Info:", newSmurf);
   }
 
   return (
