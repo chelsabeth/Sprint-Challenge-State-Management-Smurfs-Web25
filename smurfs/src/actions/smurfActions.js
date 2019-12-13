@@ -12,6 +12,9 @@ export const getSmurfs = () => dispatch => {
             console.log("Data from API:", res);
             dispatch({ type: FETCH_SMURFS_SUCCESS, payload: res });
         })
-        .catch(err => dispatch({ type: FETCH_SMURFS_FAIL, payload: err }));
+        .catch(err => {
+            console.log("this is the error", err)
+            dispatch({ type: FETCH_SMURFS_FAIL, payload: err.response })
+        })
 
 }
