@@ -1,4 +1,5 @@
 import axios from "axios";
+// import { newSmurf } from "../components/SmurfForm";
 
 export const FETCH_SMURFS_START = "FETCH_SMURFS_START";
 export const FETCH_SMURFS_SUCCESS = "FETCH_SMURFS_SUCCESS";
@@ -21,10 +22,11 @@ export const getSmurfs = () => dispatch => {
         })
 }
 
-export const postSmurf = () => dispatch => {
-    dispatch({ type: POST_SMURF });
+export const postSmurf = (newSmurf) => dispatch => {
+    // dispatch({ type: POST_SMURF });
+    console.log("**SMURF**", newSmurf);
     axios
-        .post("http://localhost:3333/smurfs")
+        .post("http://localhost:3333/smurfs", newSmurf)
         .then(res => {
             console.log("Post axios call:", res.data)
             dispatch({ type: POST_SMURF, payload: res.data })
