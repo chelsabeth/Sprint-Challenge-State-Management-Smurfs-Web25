@@ -2,6 +2,9 @@ export {
     FETCH_SMURFS_START,
     FETCH_SMURFS_SUCCESS,
     FETCH_SMURFS_FAIL,
-    getSmurfs
+    POST_SMURF,
+    POST_SMURF_FAIL,
+    getSmurfs,
+    postSmurf
 } from "./smurfActions";
 
